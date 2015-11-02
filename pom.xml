@@ -31,6 +31,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <modules>
+        <module>examples</module>
+        <module>spring-van-helsing</module>
+    </modules>
+
     <repositories>
         <repository>
             <id>jcenter</id>
@@ -38,14 +43,23 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <!-- Test dependencies-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.1.2.RELEASE</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Test dependencies-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
