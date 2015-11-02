@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.spring-van-helsing</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <name>Spring Van Helsing</name>
+
+    <description>Spring Van Helsing is adressed to solve problem called as "jar hell" for springframework based application.</description>
+    <url>https://github.com/vladimir-bukhtoyarov/spring-van-helsing</url>
+
+    <scm>
+        <url>https://github.com/vladimir-bukhtoyarov/spring-van-helsing</url>
+        <connection>scm:git:git://github.com/vladimir-bukhtoyarov/spring-van-helsing.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>vladimir.bukhtoyarov</id>
+            <name>Vladimir Bukhtoyarov</name>
+            <email>jsecoder@mail.ru</email>
+            <url>https://github.com/vladimir-bukhtoyarov</url>
+        </developer>
+    </developers>
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Test dependencies-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

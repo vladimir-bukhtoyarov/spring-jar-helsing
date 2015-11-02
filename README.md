@@ -1,2 +1,2 @@
-# spring-jar-hell-destroyer
-spring-jar-hell-destroyer is adressed to solve problem called as "jar hell" for springframework based application 
+# Spring Van Helsing
+Spring Van Helsing is adressed to solve problem called as "jar hell" for springframework based application.
