@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
 	<parent>
-       <groupId>com.github.spring-van-helsing</groupId>
+       <groupId>com.github.spring-jar-helsing</groupId>
        <artifactId>parent</artifactId>
        <version>1.0.0-SNAPSHOT</version>
 	</parent>
 
     <packaging>jar</packaging>
-	<artifactId>spring-van-helsing</artifactId>
+	<artifactId>spring-jar-helsing</artifactId>
 
     <dependencies>
         <dependency>

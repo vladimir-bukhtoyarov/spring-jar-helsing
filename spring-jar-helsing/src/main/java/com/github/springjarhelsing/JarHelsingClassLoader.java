@@ -1,15 +1,15 @@
-package com.github.springvanhelsing;
+package com.github.springjarhelsing;
 
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Objects;
 
 
-public class InvertedURLClassLoader extends URLClassLoader {
+public class JarHelsingClassLoader extends URLClassLoader {
 
     private final ClassLoader parent;
 
-    public InvertedURLClassLoader(URL[] classpath, ClassLoader parent) {
+    public JarHelsingClassLoader(URL[] classpath, ClassLoader parent) {
         super(classpath, null);
         this.parent = Objects.requireNonNull(parent);
     }

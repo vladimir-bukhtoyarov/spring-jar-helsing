@@ -3,19 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.spring-van-helsing</groupId>
+    <groupId>com.github.spring-jar-helsing</groupId>
     <artifactId>parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>Spring Van Helsing</name>
+    <name>Spring Jar Helsing</name>
 
-    <description>Spring Van Helsing is adressed to solve problem called as "jar hell" for springframework based application.</description>
-    <url>https://github.com/vladimir-bukhtoyarov/spring-van-helsing</url>
+    <description>Spring Jar Helsing is adressed to solve problem called as "jar hell" for springframework based application.</description>
+    <url>https://github.com/vladimir-bukhtoyarov/spring-jar-helsing</url>
 
     <scm>
-        <url>https://github.com/vladimir-bukhtoyarov/spring-van-helsing</url>
-        <connection>scm:git:git://github.com/vladimir-bukhtoyarov/spring-van-helsing.git</connection>
+        <url>https://github.com/vladimir-bukhtoyarov/spring-jar-helsing</url>
+        <connection>scm:git:git://github.com/vladimir-bukhtoyarov/spring-jar-helsing.git</connection>
     </scm>
     <developers>
         <developer>
@@ -33,7 +33,7 @@
 
     <modules>
         <module>examples</module>
-        <module>spring-van-helsing</module>
+        <module>spring-jar-helsing</module>
     </modules>
 
     <repositories>
