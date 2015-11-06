@@ -14,9 +14,10 @@
     <name>Spring Jar Helsing usage example</name>
 
     <modules>
-		<module>with-guavar09</module>
-		<module>with-guavar17</module>
-        <module>distribution</module>
+        <module>examples-api</module>
+		<module>with-guava-r09</module>
+		<module>with-guava-17</module>
+        <module>j2se-test</module>
 	</modules>
 
 </project>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <bean id="guava17UninterpretableFutureGetter" class="com.github.springjarhelsing.Guava17UninterpretableFutureGetter"/>
+
+    <bean class="com.github.springjarhelsing.JarHelsingBeanFactoryPostProcessor">
+        <property name="resourceLocations">
+            <list>
+                <value>classpath:test-subcontext.xml</value>
+            </list>
+        </property>
+        <property name="overridenClasspathUrls">
+            <list>
+                <value>classpath:custom-libs/guava-r09.jar</value>
+                <value>classpath:custom-libs/with-guavar09-1.0.0.jar</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="testContext" class="com.github.springjarhelsing.TestContext">
+        <property name="guava09UninterpretableFutureGetter" ref="guava09UninterpretableFutureGetter"/>
+        <property name="guava17UninterpretableFutureGetter" ref="guava17UninterpretableFutureGetter"/>
+    </bean>
+
+</beans>

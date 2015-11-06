@@ -61,7 +61,7 @@ public class JarHelsingBeanFactoryPostProcessor implements BeanDefinitionRegistr
         try {
             ClassLoader parentClassLoader = getClass().getClassLoader();
 
-            this.jarHelsingClassLoader = buildJarHelsingClassloader(parentClassLoader, overridenClasspathUrls);
+            this.jarHelsingClassLoader = new JarHelsingClassLoader(overridenClasspathUrls, parentClassLoader);
 
             setContextClassloader(jarHelsingClassLoader);
 
@@ -86,21 +86,6 @@ public class JarHelsingBeanFactoryPostProcessor implements BeanDefinitionRegistr
         subcontext.load(resourceLocations.toArray(new String[0]));
         subcontext.refresh();
         return subcontext;
-    }
-
-    private static JarHelsingClassLoader buildJarHelsingClassloader(ClassLoader parentClassLoader, Collection<String> classpath) throws BeansException {
-        URL[] classpathUrls = new URL[classpath.size()];
-        int i = 0;
-        for (String classpathElement : classpath) {
-            try {
-                classpathUrls[i] = new URL(classpathElement);
-            } catch (MalformedURLException e) {
-                String msg = "Fail to create url from [" + classpathElement + "]";
-                throw new BootstrapException(msg, e);
-            }
-            i++;
-        }
-        return new JarHelsingClassLoader(classpathUrls, parentClassLoader);
     }
 
     private ClassLoader getContextClassLoader() {
