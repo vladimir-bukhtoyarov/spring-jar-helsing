@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.github.spring-jar-helsing</groupId>
         <artifactId>examples</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.spring-jar-helsing</groupId>
-            <artifactId>with-guavar09</artifactId>
+            <artifactId>with-guava-r09</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.spring-jar-helsing</groupId>
-            <artifactId>with-guavar17</artifactId>
+            <artifactId>with-guava-17</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

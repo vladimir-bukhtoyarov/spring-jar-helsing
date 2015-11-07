@@ -5,7 +5,7 @@
 
     <groupId>com.github.spring-jar-helsing</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <packaging>pom</packaging>
     <name>Spring Jar Helsing</name>
@@ -19,10 +19,15 @@
     </scm>
     <developers>
         <developer>
-            <id>vladimir.bukhtoyarov</id>
+            <id>vladimir-bukhtoyarov</id>
             <name>Vladimir Bukhtoyarov</name>
-            <email>jsecoder@mail.ru</email>
+            <email>jsecoder@gmail.com</email>
             <url>https://github.com/vladimir-bukhtoyarov</url>
+            <organization>Dino systems</organization>
+            <organizationUrl>http://www.dins.ru/</organizationUrl>
+            <roles>
+                <role>Senior software engineer</role>
+            </roles>
         </developer>
     </developers>
     <properties>
@@ -32,8 +37,8 @@
     </properties>
 
     <modules>
-        <module>examples</module>
         <module>spring-jar-helsing</module>
+        <module>examples</module>
     </modules>
 
     <repositories>
@@ -61,5 +66,68 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>coverall</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.2.201409121644</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <repoToken>${env.coverallToken}</repoToken>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>bintray</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
