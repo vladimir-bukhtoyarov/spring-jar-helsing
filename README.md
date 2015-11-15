@@ -3,16 +3,16 @@ Spring Jar Helsing is addressed to solve problem called as "jar hell" for spring
 
 ## For persons older than 18 years
 This library contains the blood, guts and dismemberment.
+You should not use this library if you don not understand what is: class, classloader, classpath, resource, current classloader, context classloader, URLClassLoader, URLStreamHandler.
 
 ## Disclaimer
-* As the author of this library and as java developer who use springframework for seven year I strongly do not recommend you to use this library, 
+As the author of this library and as java developer who use springframework for seven year I strongly do not recommend you to use this library, 
 but not because "Spring Jar Helsing" is bad library with bad design or ugly errors, 
 I do not recommend to use this just because it looks as very strange when you are trying to combine incompatible libraries in same applications.
 For most cases it would be better rewrite your application and solve incompatibilities in true way instead of hacking it via classloaders.
 You can use this library only for extremal cases when by independent from you reasons you can not to change something: 
 for example you can not to change third-party proprietary dependency or you have not time to do things in right way. 
 Regardless of the reasons that made you use this library, you should clearly understand that you are doing something wrong.
-* Also, you should not use this library if you don not understand what is: class, classlaoder, classpath, resource, current classloader, context classloader.
 
 
 ## Get Spring Jar Helsing library
