@@ -6,13 +6,12 @@ This library contains the blood, guts and dismemberment.
 You should not use this library if you don not understand what is: class, classloader, classpath, resource, current classloader, context classloader, URLClassLoader, URLStreamHandler.
 
 ## Disclaimer
-As the author of this library and as java developer who use springframework for seven year I strongly do not recommend you to use this library, 
-but not because "Spring Jar Helsing" is bad library with bad design or ugly errors, 
-I do not recommend to use this just because it looks as very strange when you are trying to combine incompatible libraries in same applications.
-For most cases it would be better rewrite your application and solve incompatibilities in true way instead of hacking it via classloaders.
+As the author of this library and java developer who use springframework for seven years I strongly disencourage you from using this library. Not because "Spring Jar Helsing" is bad library with bad design or ugly errors: 
+i do not recommend to use this just because it is awfully suspicious when you try to combine incompatible libraries in same application.
+For most cases it would be better to rewrite your application and solve incompatibilities right way instead of hacking it via classloaders.
 You can use this library only for extremal cases when by independent from you reasons you can not to change something: 
-for example you can not to change third-party proprietary dependency or you have not time to do things in right way. 
-Regardless of the reasons that made you use this library, you should clearly understand that you are doing something wrong.
+for example you can not to change third-party proprietary dependency or you have no time to do things the right way. 
+Regardless of the reasons that made you to use this library, you should clearly understand that you are doing something wrong.
 
 
 ## Get Spring Jar Helsing library
@@ -22,12 +21,12 @@ Regardless of the reasons that made you use this library, you should clearly und
 #### You can build Spring Jar Helsing from sources
 ```bash
 git clone https://github.com/vladimir-bukhtoyarov/spring-jar-helsing.git
-cd spring-jar-helsin
+cd spring-jar-helsing
 mvn clean install
 ```
 
 #### You can add Spring Jar Helsing library to your project as maven dependency
-The Spring Jar Helsing library is distributed through [Bintray](http://bintray.com/), so you need to add Bintray repository to your `pom.xml`
+The spring-jar-helsing library is distributed through [Bintray](http://bintray.com/), so you need to add Bintray repository to your `pom.xml`
 
 ```xml
      <repositories>
@@ -38,7 +37,7 @@ The Spring Jar Helsing library is distributed through [Bintray](http://bintray.c
      </repositories>
 ```
 
-Then include Spring Jar Helsing as dependency to your `pom.xml`
+Then include spring-jar-helsing as dependency to your `pom.xml`
 
 ```xml
     <dependency>
@@ -50,8 +49,8 @@ Then include Spring Jar Helsing as dependency to your `pom.xml`
 
 ## Key concepts of Spring Jar Helsing:
 * Using [custom classloader implementation](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/spring-jar-helsing/src/main/java/com/github/springjarhelsing/JarHelsingClassLoader.java) for solving problems with classpath.
-In opposite to Oracle recommendation for classloders implementation JarHelsingClassLoader firstly trying to resolve class or resource by itself and delegates resolution to parent classloader only when unable to resolve by itself.
-It is not recommended way, but you should not wary about it because for example Tomcat's classloader acts in same manner and nobody care.  
+In opposite to Oracle recommendation for classloders implementation JarHelsingClassLoader first trying to resolve class or resource by itself and delegates resolution to parent classloader only when unable to resolve by itself.
+It is not recommended way, but you should not worry about it because for example Tomcat's classloader acts in same manner and nobody care.
 * Separation of interface in implementation. It is not a concept of Spring Jar Helsing implementation, just it is rule which you must follow to use this library correctly.
 Unfortunately separation of interface via decomposing by different class is not enough. I am sorry, but separation MUST be done by compilation unit with following rules:
   * Things which you want to do with classes from custom classpath should be decorated by interface which available in major application part, and this interface should be never available for JarHelsingClassLoader.
