@@ -22,12 +22,12 @@ Regardless of the reasons that made you use this library, you should clearly und
 #### You can build Spring Jar Helsing from sources
 ```bash
 git clone https://github.com/vladimir-bukhtoyarov/spring-jar-helsing.git
-cd bucket4j
+cd spring-jar-helsin
 mvn clean install
 ```
 
 #### You can add Spring Jar Helsing library to your project as maven dependency
-The bucket4j library is distributed through [Bintray](http://bintray.com/), so you need to add Bintray repository to your `pom.xml`
+The Spring Jar Helsing library is distributed through [Bintray](http://bintray.com/), so you need to add Bintray repository to your `pom.xml`
 
 ```xml
      <repositories>
@@ -38,7 +38,7 @@ The bucket4j library is distributed through [Bintray](http://bintray.com/), so y
      </repositories>
 ```
 
-Then include Bucket4j as dependency to your `pom.xml`
+Then include Spring Jar Helsing as dependency to your `pom.xml`
 
 ```xml
     <dependency>
