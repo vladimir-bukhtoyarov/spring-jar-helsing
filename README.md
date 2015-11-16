@@ -50,22 +50,22 @@ Then include Spring Jar Helsing as dependency to your `pom.xml`
 
 ## Key concepts of Spring Jar Helsing:
 * Using [custom classloader implementation](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/spring-jar-helsing/src/main/java/com/github/springjarhelsing/JarHelsingClassLoader.java) for solving problems with classpath.
-In opposite to Oracle recommendation for classloders implementation JarHelsingClassLoader firstly trying to resolve class or resource by itself and delegates resolution to parent classloader only when unable to resolve by itself.
+In opposite to Oracle recommendation for classloders implementation JarHelsingClassLoader first trying to resolve class or resource by itself and delegates resolution to parent classloader when unable to resolve by itself.
 It is not recommended way, but you should not wary about it because for example Tomcat's classloader acts in same manner and nobody care.  
 * Separation of interface in implementation. It is not a concept of Spring Jar Helsing implementation, just it is rule which you must follow to use this library correctly.
 Unfortunately separation of interface via decomposing by different class is not enough. I am sorry, but separation MUST be done by compilation unit with following rules:
   * Things which you want to do with classes from custom classpath should be decorated by interface which available in major application part, and this interface should be never available for JarHelsingClassLoader.
 As example, you can see correctly defined interface [there](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples/examples-api).
-Also I recommend to you keep interfaces in separated compile unit always where it possible. 
-  * Things which you want to do with classes from custom should be implemented in separated compile unit, see for example [example](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples/with-guava-r09).
-Major part of your application should never depends from implementation directly, all communication should be implemented strongly through interfaces. 
-In additionally as already described above interfaces should never be available for JarHelsingClassLoader.
+Also I recommend to you keep interfaces in separated compile unit always where is possible. 
+  * Things you want to do with classes from custom should be implemented in separated compile unit, for example see [example](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples/with-guava-r09).
+Major part of your application should never depend on implementation directly, all communication should be implemented strongly through interfaces. 
+Additionaly as described above interfaces should never be available for JarHelsingClassLoader.
 * Using [custom BeanDefinitionRegistryPostProcessor implementation](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/spring-jar-helsing/src/main/java/com/github/springjarhelsing/JarHelsingBeanFactoryPostProcessor.java) for manipulations with spring context.
-JarHelsingBeanFactoryPostProcessor creates custom spring context using JarHelsingClassLoader and custom classpath where possible, then registers all singletons from custom context to context in which JarHelsingBeanFactoryPostProcessor was initially created.
-Pay attention that nothing from major context is accessible inside custom context because custom context is fully autonomous, and also only beans with "singleton" scope are transferring from custom context to main application context.
-After declaring JarHelsingBeanFactoryPostProcessor inside your main application context, you are able to refer by name to singleton-beans declared insed custom context during dependency resolution for beans declared in main context, but never in backwards.
+JarHelsingBeanFactoryPostProcessor creates custom spring context using JarHelsingClassLoader and custom classpath wneh possible, then exports all singletons from custom context to context in which JarHelsingBeanFactoryPostProcessor was initially created.
+Pay attention that nothing from launching context is accessible inside custom context because custom context is fully autonomous, and also only beans with "singleton" scope are transferred from custom context to main application context.
+After declaring JarHelsingBeanFactoryPostProcessor inside your main application context, you are able to refer  to singleton-beans declared insed custom context by name during dependency resolution for beans declared in main context. Not backwards!
 You can see this [example](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/examples/j2se-test/src/test/resources/test-main-context.xml) in order to understand how to declare.
-Also due to JarHelsingClassLoader extends URLClassLoader it is possible to use as classpath any resources which supported by URLClassLoader includes resources available by: HTTP, HTTPS, FILE, JAR, or any custom URL protocol registered in JVM.
+Also due to JarHelsingClassLoader extends URLClassLoader it is possible to use it for any resources which is supported by URLClassLoader, including: HTTP, HTTPS, FILE, JAR, or any custom URL protocol registered in JVM.
 So declaration of classpath for JarHelsingBeanFactoryPostProcessor can look something like this:
 ```xml
 <bean class="com.github.springjarhelsing.JarHelsingBeanFactoryPostProcessor">
@@ -85,8 +85,8 @@ So declaration of classpath for JarHelsingBeanFactoryPostProcessor can look some
 ``` 
 
 ## A little explanation of examples
-Examples which located in [this director](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples) describes how it possible to use two incompatible versions of Guava(guava-r09 and guava-17.0) in same springframework based application.
-Just debug [this unit test](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/examples/j2se-test/src/test/java/com/github/springjarhelsing/SpringJarHelsingTest.java) in order to see all by own eyes.
+Examples which located in [this director](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples) describes how to use two incompatible versions of Guava(guava-r09 and guava-17.0) in same springframework based application.
+Just debug [this unit test](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/examples/j2se-test/src/test/java/com/github/springjarhelsing/SpringJarHelsingTest.java) in order to see all by yourself.
 
 
 License
