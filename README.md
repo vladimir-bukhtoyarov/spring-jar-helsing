@@ -1,4 +1,6 @@
 # Spring Jar Helsing
+
+[![Join the chat at https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing](https://badges.gitter.im/vladimir-bukhtoyarov/spring-jar-helsing.svg)](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Spring Jar Helsing is addressed to solve problem called as "jar hell" for springframework based application.
 
 ## Disclaimer
