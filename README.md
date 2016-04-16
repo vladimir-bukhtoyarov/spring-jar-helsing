@@ -1,7 +1,8 @@
 # Spring Jar Helsing
+Spring Jar Helsing is addressed to solve problem called as "jar hell" for springframework based application.
 
 [![Join the chat at https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing](https://badges.gitter.im/vladimir-bukhtoyarov/spring-jar-helsing.svg)](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-Spring Jar Helsing is addressed to solve problem called as "jar hell" for springframework based application.
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ## Disclaimer
 <details> 
@@ -88,6 +89,9 @@ So declaration of classpath for JarHelsingBeanFactoryPostProcessor can look some
 Examples which located in [this director](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/tree/master/examples) describes how to use two incompatible versions of Guava(guava-r09 and guava-17.0) in same springframework based application.
 Just debug [this unit test](https://github.com/vladimir-bukhtoyarov/spring-jar-helsing/blob/master/examples/j2se-test/src/test/java/com/github/springjarhelsing/SpringJarHelsingTest.java) in order to see all by yourself.
 
+Have a question?
+----------------
+Feel free to ask in the [gitter chat](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing)
 
 License
 -------
