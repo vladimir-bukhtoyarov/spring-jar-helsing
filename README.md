@@ -93,6 +93,10 @@ Have a question?
 ----------------
 Feel free to ask in the [gitter chat](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing)
 
+Useful links:
+----------------
+* Post in [my blog](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing)(in Russian)
+
 License
 -------
 Copyright 2015 Vladimir Bukhtoyarov
