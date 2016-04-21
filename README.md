@@ -95,7 +95,7 @@ Feel free to ask in the [gitter chat](https://gitter.im/vladimir-bukhtoyarov/spr
 
 Useful links:
 ----------------
-* Post in [my blog](https://gitter.im/vladimir-bukhtoyarov/spring-jar-helsing)(in Russian)
+* Post in [my blog](http://vbukhtoyarov-java.blogspot.ru/2016/04/jar-helsing-jar-hell-springframework.html)(in Russian)
 
 License
 -------
